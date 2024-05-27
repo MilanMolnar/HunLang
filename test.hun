@@ -1,0 +1,127 @@
+€ This file tests most features of the HunLang
+
+€ Testing variable assignments
+RENDEL SZÁM szam_var EGYENLŐ 42 VÉGE
+RENDEL SZÖVEG szoveg_var EGYENLŐ "Hello, World!" VÉGE
+RENDEL LOGIKAI igaz_var EGYENLŐ LIGAZ VÉGE
+RENDEL LOGIKAI hamis_var EGYENLŐ LHAMIS VÉGE
+
+MEGHÍV KIÍR(szam_var) VÉGE
+MEGHÍV KIÍR(szoveg_var) VÉGE
+MEGHÍV KIÍR(igaz_var) VÉGE
+MEGHÍV KIÍR(hamis_var) VÉGE
+
+€ Testing list assignments
+RENDEL LISTA<SZÖVEG> nevek_var EGYENLŐ ["Józsi", "Pisti", "Csaba", "Milan", "Bence"] VÉGE
+MEGHÍV KIÍR(nevek_var) VÉGE
+
+RENDEL SZÁM nevek_hossza EGYENLŐ MEGHÍV HOSSZ(nevek_var) VÉGE
+MEGHÍV KIÍR(nevek_hossza) VÉGE
+
+€ Testing dictionary assignments
+RENDEL ÉRTÉKPÁR<SZÖVEG, SZÁM> felsorolás EGYENLŐ {
+    "first" : 1,
+    "second" : 2,
+    "third" : 3,
+    "fourth" : 4,
+    "fifth" : 5
+} VÉGE
+MEGHÍV KIÍR(felsorolás["first"]) VÉGE
+MEGHÍV KIÍR(felsorolás["second"]) VÉGE
+
+€ Testing mathematical operations
+RENDEL SZÁM osszeg EGYENLŐ 10 MEG 5 VÉGE
+RENDEL SZÁM kulonbseg EGYENLŐ 10 KIVON 5 VÉGE
+RENDEL SZÁM szorzat EGYENLŐ 10 SZOR 5 VÉGE
+RENDEL SZÁM hanyados EGYENLŐ 10 OSZT 5 VÉGE
+
+MEGHÍV KIÍR(osszeg) VÉGE
+MEGHÍV KIÍR(kulonbseg) VÉGE
+MEGHÍV KIÍR(szorzat) VÉGE
+MEGHÍV KIÍR(hanyados) VÉGE
+
+€ Testing if statements
+HA (igaz_var UGYANAZ LIGAZ) AKKOR {
+    MEGHÍV KIÍR("igaz_var is true") VÉGE
+} VÉGE
+
+HA (hamis_var UGYANAZ LHAMIS) AKKOR {
+    MEGHÍV KIÍR("hamis_var is false") VÉGE
+} VÉGE
+
+HA (szam_var KISEBB 50) AKKOR {
+    MEGHÍV KIÍR("1szam_var is less than 50") VÉGE
+} VÉGE
+
+HA (szam_var NAGYOBB 10) AKKOR {
+    MEGHÍV KIÍR("2szam_var is greater than 10") VÉGE
+} VÉGE
+
+HA (szam_var NAGYOBB 50) AKKOR {
+    MEGHÍV KIÍR("3szam_var is greater than 50") VÉGE
+} KÜLÖNBEN (szam_var KISEBB 50) AKKOR {
+    MEGHÍV KIÍR("3szam_var is not greater than 50") VÉGE
+} VÉGE
+
+HA (300 KISEBB 10) AKKOR {
+    MEGHÍV KIÍR("4300 is less than 10") VÉGE
+} KÜLÖNBEN (100 KISEBB 500) AKKOR {
+    MEGHÍV KIÍR("4100 is greater than 500") VÉGE
+} VÉGÜL AKKOR {
+    MEGHÍV KIÍR("4VÉGÜL futott le") VÉGE
+} VÉGE
+
+€ Testing for loops
+CIKLUS(SZÁM i EGYENLŐ 0 VÉGE i KISEBB nevek_hossza VÉGE MEGHÍV NÖVEL(i, 1)) {
+    MEGHÍV KIÍR(nevek_var[i]) VÉGE
+} VÉGE
+
+€ Testing foreach loops
+MINDEGYIKEN(ciklus_változó BENNE nevek_var) {
+    MEGHÍV KIÍR(ciklus_változó) VÉGE
+} VÉGE
+
+MINDEGYIKEN(érték_pár BENNE felsorolás) {
+    MEGHÍV KIÍR(érték_pár) VÉGE
+} VÉGE
+
+€ Testing while loops
+RENDEL SZÁM j EGYENLŐ 0 VÉGE
+AMÍG(j KISEBB 5) {
+    MEGHÍV KIÍR(j) VÉGE
+    RENDEL SZÁM j EGYENLŐ MEGHÍV NÖVEL(j, 1) VÉGE
+} VÉGE
+
+€ Testing do while loops
+RENDEL SZÁM k EGYENLŐ 0 VÉGE
+UTÁNA {
+    MEGHÍV KIÍR(k) VÉGE
+    RENDEL SZÁM k EGYENLŐ MEGHÍV NÖVEL(k, 1) VÉGE
+} AMÍG(k KISEBB 5) VÉGE
+
+€ Testing functions
+UTASÍTÁSOK osszead(SZÁM a, SZÁM b) VISSZATÉR SZÁM {
+    VISSZAAD a MEG b VÉGE
+} VÉGE
+
+RENDEL SZÁM eredmeny EGYENLŐ MEGHÍV osszead(10, 20) VÉGE
+MEGHÍV KIÍR(eredmeny) VÉGE
+
+UTASÍTÁSOK irjKiUzenetet(SZÖVEG uzenet) VISSZATÉR SEMMI {
+    MEGHÍV KIÍR(uzenet) VÉGE
+} VÉGE
+
+MEGHÍV irjKiUzenetet("Hello from function!") VÉGE
+
+UTASÍTÁSOK irjukKiEgyásUtánANeveket(LISTA<SZÖVEG> nevek) VISSZATÉR SEMMI {
+    MEGHÍV KIÍR(nevek) VÉGE
+    RENDEL SZÁM nevek_hossza EGYENLŐ MEGHÍV HOSSZ(nevek) VÉGE
+    CIKLUS(SZÁM i EGYENLŐ 0 VÉGE i KISEBB nevek_hossza VÉGE MEGHÍV NÖVEL(i, 1)) {
+        MEGHÍV KIÍR(nevek[i]) VÉGE
+    } VÉGE
+    MINDEGYIKEN(ciklus_változó BENNE nevek) {
+        MEGHÍV KIÍR(ciklus_változó) VÉGE
+    } VÉGE
+} VÉGE
+
+MEGHÍV irjukKiEgyásUtánANeveket(nevek_var) VÉGE
