@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HunLang README</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      .keyword {
+        color: blue;
+      }
+      .string {
+        color: green;
+      }
+      .number {
+        color: darkorange;
+      }
+      .comment {
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HunLang README</h1>
+    <p>A következő dokumentáció bemutatja a HunLang nyelv legtöbb funkcióját és szintaxisát.
+    </p>
+
+    <h2>Változók és hozzárendelés</h2>
+    <p>
+      A HunLang-ban a változók deklarálása és értékek hozzárendelése a következő
+      módon történik:
+    </p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>szam_var</code> <code class="keyword">EGYENLŐ</code> <code class="number">42</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÖVEG</code> <code>szoveg_var</code> <code class="keyword">EGYENLŐ</code> <code class="string">"Hello, World!"</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">LOGIKAI</code> <code>igaz_var</code> <code class="keyword">EGYENLŐ</code> <code class="keyword">LIGAZ</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">LOGIKAI</code> <code>hamis_var</code> <code class="keyword">EGYENLŐ</code> <code class="keyword">LHAMIS</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Listák</h2>
+    <p>Listák deklarálása és értékek hozzárendelése:</p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">LISTA&lt;SZÖVEG&gt;</code> <code>nevek_var</code> <code class="keyword">EGYENLŐ</code> <code>[</code><code class="string">"Józsi"</code>, <code class="string">"Pisti"</code>, <code class="string">"Csaba"</code>, <code class="string">"Milan"</code>, <code class="string">"Bence"</code><code>]</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Értékpárok (Szótárak)</h2>
+    <p>Értékpárok deklarálása és értékek hozzárendelése:</p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">ÉRTÉKPÁR&lt;SZÖVEG, SZÁM&gt;</code> <code>felsorolás</code> <code class="keyword">EGYENLŐ</code> <code>{</code>
+    <code class="string">"first"</code> <code>:</code> <code class="number">1</code>,
+    <code class="string">"second"</code> <code>:</code> <code class="number">2</code>,
+    <code class="string">"third"</code> <code>:</code> <code class="number">3</code>,
+    <code class="string">"fourth"</code> <code>:</code> <code class="number">4</code>,
+    <code class="string">"fifth"</code> <code>:</code> <code class="number">5</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Matematikai műveletek</h2>
+    <p>Matematikai műveletek végrehajtása:</p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>osszeg</code> <code class="keyword">EGYENLŐ</code> <code class="number">10</code> <code class="keyword">MEG</code> <code class="number">5</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>kulonbseg</code> <code class="keyword">EGYENLŐ</code> <code class="number">10</code> <code class="keyword">KIVON</code> <code class="number">5</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>szorzat</code> <code class="keyword">EGYENLŐ</code> <code class="number">10</code> <code class="keyword">SZOR</code> <code class="number">5</code> <code class="keyword">VÉGE</code>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>hanyados</code> <code class="keyword">EGYENLŐ</code> <code class="number">10</code> <code class="keyword">OSZT</code> <code class="number">5</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Feltételes elágazások (If statements)</h2>
+    <p>Feltételes elágazások használata:</p>
+    <pre>
+<code class="keyword">HA</code> <code>(igaz_var <code class="keyword">UGYANAZ</code> LIGAZ)</code> <code class="keyword">AKKOR</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR("igaz_var is true")</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">HA</code> <code>(szam_var <code class="keyword">KISEBB</code> 50)</code> <code class="keyword">AKKOR</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR("szam_var is less than 50")</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">HA</code> <code>(szam_var <code class="keyword">NAGYOBB</code> 50)</code> <code class="keyword">AKKOR</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR("szam_var is greater than 50")</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">KÜLÖNBEN</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR("szam_var is not greater than 50")</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">HA</code> <code>(szam_var <code class="keyword">NEM</code> <code class="keyword">UGYANAZ</code> 42)</code> <code class="keyword">AKKOR</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR("szam_var is not 42")</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Ciklusok</h2>
+    <h3>For Loop</h3>
+    <p>For ciklus használata:</p>
+    <pre>
+<code class="keyword">CIKLUS</code>(<code class="keyword">SZÁM</code> <code>i</code> <code class="keyword">EGYENLŐ</code> <code class="number">0</code> <code class="keyword">VÉGE</code> <code>i <code class="keyword">KISEBB</code> nevek_hossza</code> <code class="keyword">VÉGE</code> <code>MEGHÍV</code> <code>NÖVEL(i, 1))</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(nevek_var[i])</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h3>While Loop</h3>
+    <p>While ciklus használata:</p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>j</code> <code class="keyword">EGYENLŐ</code> <code class="number">0</code> <code class="keyword">VÉGE</code>
+<code class="keyword">AMÍG</code> <code>(j <code class="keyword">KISEBB</code> 5)</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(j)</code> <code class="keyword">VÉGE</code>
+    <code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>j</code> <code class="keyword">EGYENLŐ</code> <code>MEGHÍV</code> <code>NÖVEL(j, 1)</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h3>Do-While Loop</h3>
+    <p>Do-While ciklus használata:</p>
+    <pre>
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>k</code> <code class="keyword">EGYENLŐ</code> <code class="number">0</code> <code class="keyword">VÉGE</code>
+<code class="keyword">UTÁNA</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(k)</code> <code class="keyword">VÉGE</code>
+    <code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>k</code> <code class="keyword">EGYENLŐ</code> <code>MEGHÍV</code> <code>NÖVEL(k, 1)</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">AMÍG</code> <code>(k <code class="keyword">KISEBB</code> 5)</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Foreach Loop</h2>
+    <p>Foreach ciklus használata listákban és értékpárokban:</p>
+    <pre>
+<code class="keyword">MINDEGYIKEN</code>(<code>ciklus_változó <code class="keyword">BENNE</code> nevek_var)</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(ciklus_változó)</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">MINDEGYIKEN</code>(<code>érték_pár <code class="keyword">BENNE</code> felsorolás)</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(érték_pár)</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Függvények</h2>
+    <p>Függvények deklarálása és meghívása:</p>
+    <pre>
+<code class="keyword">UTASÍTÁSOK</code> <code>osszead</code>(<code class="keyword">SZÁM</code> <code>a</code>, <code class="keyword">SZÁM</code> <code>b</code>) <code class="keyword">VISSZATÉR</code> <code class="keyword">SZÁM</code> <code>{</code>
+    <code class="keyword">VISSZAAD</code> <code>a <code class="keyword">MEG</code> b</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>eredmeny</code> <code class="keyword">EGYENLŐ</code> <code class="keyword">MEGHÍV</code> <code>osszead(10, 20)</code> <code class="keyword">VÉGE</code>
+<code class="keyword">MEGHÍV</code> <code>KIÍR(eredmeny)</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">UTASÍTÁSOK</code> <code>irjKiUzenetet</code>(<code class="keyword">SZÖVEG</code> <code>uzenet</code>) <code class="keyword">VISSZATÉR</code> <code class="keyword">SEMMI</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(uzenet)</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">MEGHÍV</code> <code>irjKiUzenetet("Hello from function!")</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">UTASÍTÁSOK</code> <code>irjukKiEgyásUtánANeveket</code>(<code class="keyword">LISTA&lt;SZÖVEG&gt;</code> <code>nevek</code>) <code class="keyword">VISSZATÉR</code> <code class="keyword">SEMMI</code> <code>{</code>
+    <code class="keyword">MEGHÍV</code> <code>KIÍR(nevek)</code> <code class="keyword">VÉGE</code>
+    <code class="keyword">RENDEL</code> <code class="keyword">SZÁM</code> <code>nevek_hossza</code> <code class="keyword">EGYENLŐ</code> <code class="keyword">MEGHÍV</code> <code>HOSSZ(nevek)</code> <code class="keyword">VÉGE</code>
+    <code class="keyword">CIKLUS</code>(<code class="keyword">SZÁM</code> <code>i</code> <code class="keyword">EGYENLŐ</code> <code class="number">0</code> <code class="keyword">VÉGE</code> <code>i <code class="keyword">KISEBB</code> nevek_hossza</code> <code class="keyword">VÉGE</code> <code class="keyword">MEGHÍV</code> <code>NÖVEL(i, 1))</code> <code>{</code>
+        <code class="keyword">MEGHÍV</code> <code>KIÍR(nevek[i])</code> <code class="keyword">VÉGE</code>
+    <code>}</code> <code class="keyword">VÉGE</code>
+    <code class="keyword">MINDEGYIKEN</code>(<code>ciklus_változó <code class="keyword">BENNE</code> nevek)</code> <code>{</code>
+        <code class="keyword">MEGHÍV</code> <code>KIÍR(ciklus_változó)</code> <code class="keyword">VÉGE</code>
+    <code>}</code> <code class="keyword">VÉGE</code>
+<code>}</code> <code class="keyword">VÉGE</code>
+
+<code class="keyword">MEGHÍV</code> <code>irjukKiEgyásUtánANeveket(nevek_var)</code> <code class="keyword">VÉGE</code>
+    </pre>
+
+    <h2>Kommentek</h2>
+    <p>Kommentek használata:</p>
+    <pre>
+<code class="comment">€ Ez egy komment</code>
+    </pre>
+
+    <h2>Futtatás</h2>
+    <p>A HunLang szkriptek futtatása:</p>
+    <pre>
+<code>python main.py file.hun</code>
+    </pre>
+    <h2>Hibák</h2>
+    <code class="needed_improvements"
+      >nested if-eket nem parse-ol rendesen</code
+    >
+
+</pre>
+<h2>Project on git:</h2>
+<code class="needed_improvements"
+  >~SOON~</code
+>
+  </body>
+</html>
